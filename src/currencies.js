@@ -224,6 +224,7 @@ var CURRENCIES = [{
     name: 'anon',
     symbol: 'anon',
     addressTypes: {prod: ['0582', '5389'], testnet: []},
+    expectedLength: 26,
     validator: BTCValidator
 },{
     name: 'microbitcoin',
