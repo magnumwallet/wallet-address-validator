@@ -5690,12 +5690,6 @@ var CURRENCIES = [{
     addressTypes: {prod: ['1e'], testnet: []},
     validator: BTCValidator
 },{
-    name: 'bitcore',
-    symbol: 'btx',
-    addressTypes: {prod: ['03', '7d'], testnet: []},
-    segwitHrp: 'btx',
-    validator: BTCValidator
-},{
     name: 'ethereum',
     symbol: 'eth',
     validator: ETHValidator,
@@ -5753,10 +5747,96 @@ var CURRENCIES = [{
     name: 'raiblocks',
     symbol: 'xrb',
     validator: NANOValidator,
+},{
+    name: 'bitcore',
+    symbol: 'btx',
+    addressTypes: {prod: ['03', '7d'], testnet: []},
+    segwitHrp: 'btx',
+    validator: BTCValidator
+},{
+    name: 'bitcoinx',
+    symbol: 'bcx',
+    addressTypes: {prod: ['4b', '3f'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'anon',
+    symbol: 'anon',
+    addressTypes: {prod: ['0582', '5389'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'microbitcoin',
+    symbol: 'mbc',
+    addressTypes: {prod: ['1a', '33'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'bitcoinzero',
+    symbol: 'bzx',
+    addressTypes: {prod: ['4b', '22'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'gravitycoin',
+    symbol: 'gxx',
+    addressTypes: {prod: ['28', '0a'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'bitsend',
+    symbol: 'bsd',
+    addressTypes: {prod: ['66', '05'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'bitcloud',
+    symbol: 'btdx',
+    addressTypes: {prod: ['19', '05'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'bitcoinair',
+    symbol: 'xba',
+    addressTypes: {prod: ['4b', '75'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'Electra',
+    symbol: 'eca',
+    addressTypes: {prod: ['21', '28'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'myriadcoin',
+    symbol: 'xmy',
+    addressTypes: {prod: ['32', '09'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'zcoin',
+    symbol: 'xcz',
+    addressTypes: {prod: ['52', '07'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'viacoin',
+    symbol: 'via',
+    addressTypes: {prod: ['47', '21'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'pivx',
+    symbol: 'pivx',
+    addressTypes: {prod: ['1e', '0d'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'litecoincash',
+    symbol: 'lcc',
+    addressTypes: {prod: ['1c', '05'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'bitcoininterest',
+    symbol: 'bci',
+    addressTypes: {prod: ['66', '17'], testnet: []},
+    validator: BTCValidator
+},{
+    name: 'leocoin',
+    symbol: 'leo',
+    addressTypes: {prod: ['12', '58'], testnet: []},
+    validator: BTCValidator
 }];
 
-
 module.exports = {
+    currencies: CURRENCIES,
     getByNameOrSymbol: function (currencyNameOrSymbol) {
         var nameOrSymbol = currencyNameOrSymbol.toLowerCase();
         for (var i = 0; i < CURRENCIES.length; i++) {
@@ -5932,6 +6012,7 @@ var currencies = require('./currencies');
 var DEFAULT_CURRENCY_NAME = 'bitcoin';
 
 module.exports = {
+    currencies: currencies,
     validate: function (address, currencyNameOrSymbol, networkType) {
         var currency = currencies.getByNameOrSymbol(currencyNameOrSymbol || DEFAULT_CURRENCY_NAME);
 
