@@ -152,6 +152,12 @@ var CURRENCIES = [{
     addressTypes: {prod: ['1e'], testnet: []},
     validator: BTCValidator
 },{
+    name: 'bitcore',
+    symbol: 'btx',
+    addressTypes: {prod: ['03', '7d'], testnet: []},
+    segwitHrp: 'btx',
+    validator: BTCValidator
+},{
     name: 'ethereum',
     symbol: 'eth',
     validator: ETHValidator,
